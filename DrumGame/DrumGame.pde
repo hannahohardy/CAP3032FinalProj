@@ -1,9 +1,11 @@
 import processing.sound.*;
 
-int score =0;
+int score = 0;
+SoundFile drumhit;
 
 void setup(){
   size(800,500);
+  drumhit = new SoundFile(this, "drum_hit.mp3");
 }
 
 void draw(){
@@ -26,13 +28,16 @@ void mouseClicked() {
   if (distance < 70 / 2) {
     // If the mouse click is within the drum, increase the score
     score += 10;
+    drumhit.play();
   }
 }
 
 class Song{
   SoundFile s;
+  boolean hardmode;
   Song (SoundFile s1){
     s = s1;
+    hardmode = false;
   }
   
   

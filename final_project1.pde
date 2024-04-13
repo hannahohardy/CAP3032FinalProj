@@ -28,7 +28,7 @@ void download()
   menuWindow.setDrums();
   
   gameWindow.loadFiles();
-  gameWindow.setSong("taikodrums.wav");
+  gameWindow.setSong("synthsong.mp3");
   gameWindow.setDrums();
   
   downloaded = true;

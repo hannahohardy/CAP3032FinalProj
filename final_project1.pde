@@ -62,6 +62,8 @@ void draw(){
   }
   else if (gameWindow.getStatus())
   {
+    gameWindow.updateBlocks(); // Update the positions of blocks
+
     gameWindow.display();
   }
   else
@@ -87,8 +89,9 @@ void draw(){
 void mousePressed() 
 {
   // Checks what window is currently active
-  if (menuWindow.getStatus()) 
-  {
+  if (menuWindow.getStatus())
+  {         gameWindow.checkHit(); // Now checks hits in the rhythm game
+
     // Checks if the mouse is hovering over an option
     if (menuWindow.getMenu()) 
     {
@@ -135,4 +138,11 @@ void mousePressed()
       player.increaseScore(10);
     }
   }
+}
+void keyPressed() {
+    if (key == ' ') {
+        if (gameWindow.getStatus()) {
+            gameWindow.checkHit(); // Respond to space bar presses
+        }
+    }
 }

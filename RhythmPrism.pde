@@ -13,7 +13,7 @@ void loading()
   loadingScreen = new PImage[8];
   for (int i = 0; i < 8; i++) 
   {
-    loadingScreen[i] = temp.get(i*102, 0, 102, 102);
+    loadingScreen[i] = temp.get(i*106, 0, 106, 100);
   }
   
   loadingScreenBool = true;
